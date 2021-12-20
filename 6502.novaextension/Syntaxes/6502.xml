@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="6502">
+    <meta>
+        <name>6502</name>
+        <preferred-file-extension>asm</preferred-file-extension>
+    </meta>
+
+    <detectors>
+        <extension priority="1.0">s,S,asm,</extension>
+    </detectors>
+
+    <comments>
+        <single>
+            <expression>;(.*)$</expression>
+        </single>
+    </comments>
+    
+    <brackets>
+        <pair open="[" close="]" />
+    </brackets>
+    
+    <surrounding-pairs>
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&quot;" close="&quot;" />
+    </surrounding-pairs>
+
+    <scopes>
+        <include syntax="self" collection="values" />
+        <include syntax="self" collection="strings" />
+        <include syntax="self" collection="comments" />
+        <include syntax="self" collection="routines" />
+        <include syntax="self" collection="identifiers" />
+        <include syntax="self" collection="keywords" />
+    </scopes>
+
+    <collections>
+        <collection name="values">
+            <scope name="6502.value.number.int">
+                <expression>\#?[0-9]+\b</expression>
+            </scope> 
+            <scope name="6502.value.number.hex">
+                <expression>\#?\$[a-fA-F0-9]+\b</expression>
+            </scope>
+            <scope name="6502.value.number.bin">
+                <expression>\#?\%[0-1]+\b</expression>
+            </scope>
+        </collection>
+        <collection name="comments">
+            <scope name="6502.comment.single" spell-check="false">
+                <expression>;(.*)$</expression>
+            </scope>
+        </collection>
+        <collection name="routines">
+            <scope name="6502.identifier.function.name">
+                <expression>[0-9a-zA-Z_]+:</expression>
+            </scope>
+        </collection>
+        <collection name="strings">
+            <scope name="6502.string.singleline">
+                <expression>&quot;(?:[^&quot;\\]|\\.)*(?:&quot;|$)</expression>
+            </scope>
+        </collection>
+        <collection name="keywords">
+            <scope name="6502.keyword.construct">
+                <strings case-insensitive="true">
+                    <string>clc</string>
+                    <string>cld</string>
+                    <string>cli</string>
+                    <string>dex</string>
+                    <string>dey</string>
+                    <string>inx</string>
+                    <string>iny</string>
+                    <string>nop</string>
+                    <string>pha</string>
+                    <string>pla</string>
+                    <string>rti</string>
+                    <string>rts</string>
+                    <string>sei</string>
+                    <string>tax</string>
+                    <string>tay</string>
+                    <string>tsx</string>
+                    <string>txa</string>
+                    <string>txs</string>
+                    <string>tya</string>
+                    <string>adc</string>
+                    <string>and</string>
+                    <string>asl</string>
+                    <string>bcc</string>
+                    <string>bcs</string>
+                    <string>beq</string>
+                    <string>bit</string>     
+                    <string>bmi</string>
+                    <string>bne</string>
+                    <string>bpl</string>
+                    <string>brk</string>
+                    <string>bvc</string>
+                    <string>bvs</string>
+                    <string>clv</string>
+                    <string>cmp</string>
+                    <string>cpx</string>
+                    <string>cpy</string>
+                    <string>dec</string>
+                    <string>eor</string>
+                    <string>inc</string>
+                    <string>jmp</string>
+                    <string>jsr</string> 
+                    <string>lda</string>
+                    <string>ldx</string>
+                    <string>ldy</string>
+                    <string>lsr</string>
+                    <string>ora</string>
+                    <string>php</string>
+                    <string>plp</string>
+                    <string>rol</string>
+                    <string>ror</string>
+                    <string>sbc</string>
+                    <string>sec</string>
+                    <string>sed</string>
+                    <string>sta</string>
+                    <string>stx</string>
+                    <string>sty</string>
+                </strings>
+            </scope>
+            <scope name="6502.processing">
+                <expression>(\b|\.)(?i)(pad|org|byte|word|align|incbin|bin|include|incsrc|error|enum|ende|rept|endr|macro|endm|ifdef|ifndef|if|else|elseif|endif|base|fillvalue|dsb|dsw|hex|dl|dh|db|dw|equ)(?-i)\b</expression>
+            </scope>
+        </collection>
+        <collection name="identifiers">
+            <scope name="6502.identifier.argument.registers">
+                <strings case-insensitive="true">
+                    <string>a</string>
+                    <string>x</string>
+                    <string>y</string>
+                </strings>
+            </scope>
+        </collection>
+    </collections>
+
+</syntax>

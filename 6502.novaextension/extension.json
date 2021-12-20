@@ -1,0 +1,10 @@
+{
+    "identifier": "com.tomsalvo.6502",
+    "name": "6502",
+    "organization": "tomsalvo",
+    "description": "Basic syntax highlighting for 6502 assembly (ASM6)",
+    "repository": "https://github.com/tsalvo/6502-Nova-Extension",
+    "bugs": "https://github.com/tsalvo/6502-Nova-Extension/issues",
+    "version": "0.0.1",
+    "categories": ["languages"]
+}
