@@ -5,6 +5,6 @@
     "description": "Basic syntax highlighting for 6502 assembly (ASM6)",
     "repository": "https://github.com/tsalvo/6502-Nova-Extension",
     "bugs": "https://github.com/tsalvo/6502-Nova-Extension/issues",
-    "version": "0.0.3",
+    "version": "0.0.2",
     "categories": ["languages"]
 }
