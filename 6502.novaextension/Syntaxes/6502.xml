@@ -6,7 +6,7 @@
     </meta>
 
     <detectors>
-        <extension priority="1.0">s,S,asm,</extension>
+        <extension priority="1.0">s,S,asm</extension>
     </detectors>
 
     <comments>
